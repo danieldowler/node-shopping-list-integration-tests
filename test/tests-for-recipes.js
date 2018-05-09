@@ -60,6 +60,7 @@ describe('Recipes', function() {
         
         const updateData = {
           name: 'foo',
+          ingredients: ['bar, fizz, buzz'],
           checked: true
         };
     
