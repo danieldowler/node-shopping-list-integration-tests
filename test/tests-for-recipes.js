@@ -52,10 +52,10 @@ describe('Recipes', function () {
                 expect(res).to.have.status(201);
                 expect(res).to.be.json;
                 expect(res.body).to.be.a('object');
-                res.body.should.include.keys('id', 'name', 'ingredients');
-                res.body.name.should.equal(newRecipe.name);
-                res.body.ingredients.should.be.a('array');
-                res.body.ingredients.should.include.members(newRecipe.ingredients);
+                expect(res.body).to.include.keys('id', 'name', 'ingredients');
+                expect(res.body.name).to.equal(newRecipe.name);
+                expect(res.body.ingredients).to.be.a('array');
+                expect(res.body.ingredients).to.include.members(newRecipe.ingredients);
             });
     });
 
