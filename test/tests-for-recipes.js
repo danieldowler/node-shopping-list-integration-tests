@@ -51,7 +51,7 @@ describe('Recipes', function () {
             .then(function (res) {
                 expect(res).to.have.status(201);
                 expect(res).to.be.json;
-                expect(res).body.to.be.a('object');
+                expect(res.body).to.be.a('object');
                 res.body.should.include.keys('id', 'name', 'ingredients');
                 res.body.name.should.equal(newRecipe.name);
                 res.body.ingredients.should.be.a('array');
