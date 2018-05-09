@@ -49,7 +49,7 @@ describe('Recipes', function () {
             .post('/recipes')
             .send(newRecipe)
             .then(function (res) {
-                res.should.have.status(201);
+                expect(res).to.have.status(201);
                 res.should.be.json;
                 res.body.should.be.a('object');
                 res.body.should.include.keys('id', 'name', 'ingredients');
@@ -77,7 +77,7 @@ describe('Recipes', function () {
                     .send(updateData)
             })
             .then(function (res) {
-                res.should.have.status(204);
+                expect(res).to.have.status(204);
             });
     });
 
