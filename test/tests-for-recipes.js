@@ -50,7 +50,7 @@ describe('Recipes', function () {
             .send(newRecipe)
             .then(function (res) {
                 expect(res).to.have.status(201);
-                res.should.be.json;
+                expect(res).to.be.json;
                 res.body.should.be.a('object');
                 res.body.should.include.keys('id', 'name', 'ingredients');
                 res.body.name.should.equal(newRecipe.name);
